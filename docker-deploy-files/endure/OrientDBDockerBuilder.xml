@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<docker-template name="orientdb">
+<instance daemon="true" interactive="false" tty="true">
+      <docker-daemon-URL>http://95.85.52.78:5555</docker-daemon-URL>
+      <image-name>bbytes/orientdb</image-name>
+      <port>2480:2480</port>
+	  <port>2424:2424</port>
+	  <env>usr:pass=admin/W0rk1ng$ </env>
+      <volume-mapping>/opt/bbytes/endure/orientdb/databases:/opt/bbytes/orientdb-1.6.4.0/databases</volume-mapping>
+	  <volume-mapping>/opt/bbytes/endure/orientdb/backup:/opt/bbytes/orientdb-1.6.4.0/backup</volume-mapping>
+	  <volume-mapping>/opt/bbytes/endure/orientdb/logs:/opt/bbytes/orientdb-1.6.4.0/log</volume-mapping>
+</instance> 
+</docker-template>

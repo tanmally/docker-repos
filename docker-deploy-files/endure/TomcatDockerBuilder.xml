@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<docker-template name="Tomcat7">
+<instance daemon="true" interactive="false" tty="true">
+      <docker-daemon-URL>http://95.85.52.78:5555</docker-daemon-URL>
+      <image-name>bbytes/tomcat7</image-name>
+      <port>8080:8080</port>
+	  <volume-mapping>/opt/bbytes/endure/tomcat/imagefolder:/var/lib/tomcat7/imagefolder</volume-mapping>
+      <volume-mapping>/opt/bbytes/endure/tomcat/webapps:/var/lib/tomcat7/webapps</volume-mapping>
+	  <volume-mapping>/opt/bbytes/endure/tomcat/logs:/var/lib/tomcat7/logs</volume-mapping>
+	  <volume-mapping>/opt/bbytes/endure/tomcat/temp:/var/lib/tomcat7/imagefolder/temp</volume-mapping>
+	  <volume-mapping>/opt/bbytes/endure/tomcat/temp/thumb:/var/lib/tomcat7/imagefolder/temp/thumb</volume-mapping>
+</instance>
+</docker-template>

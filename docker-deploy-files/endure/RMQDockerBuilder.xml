@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<docker-template name="RabbitMQ">
+	<instance daemon="true" interactive="false" tty="true">
+	<docker-daemon-URL>http://95.85.52.78:5555</docker-daemon-URL>
+    <image-name>bbytes/rabbitmq</image-name>
+	<host-name>rabbithost</host-name>
+    <port>5672:5672</port>
+	<port>15672:15672</port>
+	<env>usr:pass=admin:d1ff1cult@123</env>
+    <volume-mapping>/opt/bbytes/endure/rabbitmq:/var/lib/rabbitmq/mnesia</volume-mapping>
+	</instance>
+</docker-template>

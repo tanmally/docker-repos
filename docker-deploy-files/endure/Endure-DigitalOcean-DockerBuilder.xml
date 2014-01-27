@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<docker-template name="endure">
+	<!-- <instance daemon="true" interactive="false" tty="true">
+      <docker-daemon-URL>http://95.85.52.78:5555</docker-daemon-URL>
+      <image-name>shipyard/shipyard</image-name>
+      <port>8000:8000</port>
+    </instance> 
+  
+	<instance daemon="false" interactive="true" tty="true">
+      <docker-daemon-URL>http://95.85.52.78:5555</docker-daemon-URL>
+      <image-name>bbytes/proxy-etc</image-name>
+      <port>3333:3333</port>
+	  <port>80:80</port>
+      <volume-mapping>/opt/bbytes/endure/proxy-etc/data:/opt/bbytes/proxy-etc/data</volume-mapping>
+	</instance>
+	-->
+  
+	<instance daemon="true" interactive="false" tty="true">
+      <docker-daemon-URL>http://95.85.52.78:5555</docker-daemon-URL>
+      <image-name>bbytes/rabbitmq</image-name>
+	  <host-name>rabbithost</host-name>
+      <port>5672:5672</port>
+	  <port>15672:15672</port>
+	  <env>usr:pass=admin:d1ff1cult@123</env>
+      <volume-mapping>/opt/bbytes/endure/rabbitmq:/var/lib/rabbitmq/mnesia</volume-mapping>
+	</instance>
+	
+	<instance daemon="true" interactive="false" tty="true">
+      <docker-daemon-URL>http://95.85.52.78:5555</docker-daemon-URL>
+      <image-name>bbytes/orientdb</image-name>
+      <port>2480:2480</port>
+	  <port>2424:2424</port>
+	  <env>usr:pass=admin/W0rk1ng$ </env>
+      <volume-mapping>/opt/bbytes/endure/orientdb/databases:/opt/bbytes/orientdb-1.6.4.0/databases</volume-mapping>
+	  <volume-mapping>/opt/bbytes/endure/orientdb/backup:/opt/bbytes/orientdb-1.6.4.0/backup</volume-mapping>
+	  <volume-mapping>/opt/bbytes/endure/orientdb/logs:/opt/bbytes/orientdb-1.6.4.0/log</volume-mapping>
+	</instance> 
+	
+	<instance daemon="true" interactive="false" tty="true">
+      <docker-daemon-URL>http://95.85.52.78:5555</docker-daemon-URL>
+      <image-name>bbytes/tomcat7</image-name>
+      <port>8080:8080</port>
+	  <volume-mapping>/opt/bbytes/endure/tomcat/imagefolder:/var/lib/tomcat7/imagefolder</volume-mapping>
+      <volume-mapping>/opt/bbytes/endure/tomcat/webapps:/var/lib/tomcat7/webapps</volume-mapping>
+	  <volume-mapping>/opt/bbytes/endure/tomcat/logs:/var/lib/tomcat7/logs</volume-mapping>
+	  <volume-mapping>/opt/bbytes/endure/tomcat/temp:/var/lib/tomcat7/imagefolder/temp</volume-mapping>
+	  <volume-mapping>/opt/bbytes/endure/tomcat/temp/thumb:/var/lib/tomcat7/imagefolder/temp/thumb</volume-mapping>
+	</instance>
+	
+	<!--
+	<instance daemon="true" interactive="false" tty="true">
+      <docker-daemon-URL>http://95.85.52.78:5555</docker-daemon-URL>
+      <image-name>bbytes/avis</image-name>
+	</instance>
+	-->
+	
+</docker-template>

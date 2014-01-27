@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<docker-template name="avis">
+ <instance daemon="true" interactive="false" tty="true">
+      <docker-daemon-URL>http://95.85.52.78:5555</docker-daemon-URL>
+      <image-name>bbytes/avis</image-name>
+	  <volume-mapping>/opt/bbytes/endure/avis/conf:/opt/bbytes/avis_conf</volume-mapping>
+ </instance>
+</docker-template>
