@@ -11,8 +11,13 @@ EXPOSE 8080
 
 ADD tomcat.conf /etc/supervisor/conf.d/
 ADD tomcat7.settings /tmp/tomcat7.settings
+ADD server.xml /tmp/server.xml
+ADD logging.properties /tmp/logging.properties
 
 RUN cat /tmp/tomcat7.settings > /etc/default/tomcat7
+RUN cat /tmp/server.xml > /var/lib/tomcat7/conf/server.xml
+RUN cat /tmp/logging.properties > /var/lib/tomcat7/logging.properties
+
 
 RUN chmod 777 -R /var/lib/tomcat7
 
