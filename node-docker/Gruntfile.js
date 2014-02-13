@@ -18,13 +18,13 @@ module.exports = function(grunt) {
 
 		shell : {
 			mongo : {
-				command : 'mongod.exe --dbpath=C:\data\db',
+				command : 'mongod.exe --dbpath=/dockcloud/data/db',
 				options : {
 					async : true
 				}
 			},
-			nodemon : {
-				command : 'nodemon <%= serverFile %>',
+			forever : {
+				command : 'forever <%= serverFile %>',
 				options : {
 					stdout : true,
 					stderr : true
@@ -53,6 +53,6 @@ module.exports = function(grunt) {
 			});
 
 	grunt.registerTask('default', [ 'clean', 'gitclone', 'install',
-			'shell:nodemon' ]);
+			'shell:forever' ]);
 
 };
