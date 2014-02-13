@@ -2,7 +2,7 @@ FROM ubuntu:12.10
 MAINTAINER bbytes  "info@beyondbytes.co.in"
 
 # Update packages
-RUN apt-get update && apt-get upgrade
+RUN apt-get update && apt-get -y upgrade
 
 # Install some packages we need
 RUN apt-get install -y curl
