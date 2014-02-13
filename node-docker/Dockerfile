@@ -12,7 +12,6 @@ RUN cd /usr/local && curl http://nodejs.org/dist/v0.10.22/node-v0.10.22-linux-x6
 RUN npm -g update npm
 RUN npm install -g grunt-cli
 RUN npm install -g forever
-RUN npm install pm2@latest -g
 
 RUN apt-get install -y git-core
 
