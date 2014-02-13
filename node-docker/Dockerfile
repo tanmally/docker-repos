@@ -29,6 +29,4 @@ ADD init.sh /dockcloud/init.sh
 
 RUN cd /dockcloud ; npm install
 
-RUN chmod +x /dockcloud/init.sh
-
-CMD cd /dockcloud ; ./init.sh
+CMD ["supervisord -n -c /etc/supervisor.conf"]
