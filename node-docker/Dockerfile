@@ -1,4 +1,5 @@
-FROM ubuntu:12.10
+FROM bbytes/base
+
 MAINTAINER bbytes  "info@beyondbytes.co.in"
 
 # Update packages
