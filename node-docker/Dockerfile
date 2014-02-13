@@ -30,4 +30,4 @@ RUN cd /dockcloud ; npm install
 
 RUN chmod +x /dockcloud/init.sh
 
-ENTRYPOINT ["cd /dockcloud && ./init.sh"]
+CMD cd /dockcloud ; ./init.sh
