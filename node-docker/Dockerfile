@@ -26,7 +26,8 @@ ADD package.json /dockcloud/package.json
 ADD config.json /dockcloud/config.json
 ADD init.sh /dockcloud/init.sh
 
+RUN cd /dockcloud ; npm install
+
 RUN chmod +x /dockcloud/init.sh
 
-
-ENTRYPOINT ["/dockcloud/init.sh"]
+ENTRYPOINT ["cd /dockcloud && ./init.sh"]
