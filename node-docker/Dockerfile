@@ -25,8 +25,11 @@ RUN mkdir -p /dockcloud/data
 ADD Gruntfile.js /dockcloud/Gruntfile.js
 ADD package.json /dockcloud/package.json
 ADD config.json /dockcloud/config.json
+ADD node-init.conf /etc/supervisor/conf.d/
+
 ADD init.sh /dockcloud/init.sh
+RUN chmod +x /dockcloud/init.sh
 
 RUN cd /dockcloud ; npm install
 
-CMD ["supervisord -n -c /etc/supervisor.conf"]
+CMD supervisord -n -c /etc/supervisor.conf
